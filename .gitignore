@@ -1,0 +1,43 @@
+# Supabase
+.branches
+.temp
+
+# dotenvx
+.env.keys
+.env.local
+.env.*.local
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Env files
+.env
+.env.local
+.env.*.local
+vb-*-config.php
+vb-*-secrets.php
+
+# Supabase keys (if exported)
+supabase/.temp/
+supabase/.env
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Packages
+dist/
+package-lock.json
+
+# Ignore all files in the .vscode folder
+.vscode/
+
+# Ignore AI workspace settings
+AI_WORKSPACE.md
+AI_CONTEXT.local.md
+AI_WORKSPACE.local.md
+**/AI_CONTEXT.local.md
+**/AI_WORKSPACE.local.md
