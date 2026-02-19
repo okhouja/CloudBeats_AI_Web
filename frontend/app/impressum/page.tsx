@@ -1,10 +1,8 @@
 import Link from "next/link";
-import { getImpressum, IMPRESSUM_URL } from "@/lib/getImpressum";
 
-export default async function ImpressumPage() {
-  const data = await getImpressum();
-  const showFallback = !data.html || !!data.error;
+const LEGAL_URL = "https://mein.online-impressum.de/cloudbeatsai/";
 
+export default function ImpressumPage() {
   return (
     <div className="min-h-screen bg-[var(--cb-bg-1)]">
       <header className="sticky top-0 z-10 border-b border-white/10 bg-white/5 backdrop-blur-md">
@@ -26,58 +24,60 @@ export default async function ImpressumPage() {
           <h1 className="text-2xl font-semibold text-[var(--cb-text)]">
             Impressum
           </h1>
-          <p className="mt-2 text-sm text-[var(--cb-text-muted)]">
-            Legal information is hosted externally for address protection. A
-            mirrored preview is shown below.
-          </p>
-          <p className="mt-1 text-xs text-[var(--cb-text-muted)]/80">
-            This page is mirrored from the official external source for
-            convenience.
-          </p>
 
-          <div className="mt-6 flex flex-wrap items-center gap-3">
+          <div className="mt-6">
             <a
-              href={IMPRESSUM_URL}
+              href={LEGAL_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg bg-[var(--cb-pink-strong)] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:opacity-90"
+              className="inline-block rounded-lg bg-[var(--cb-pink-strong)] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:opacity-90"
             >
               View legal information
             </a>
-            <Link
-              href="/impressum"
-              className="rounded-lg border border-white/20 bg-white/5 px-4 py-2.5 text-sm font-medium text-[var(--cb-text)] transition-colors hover:bg-white/10"
-            >
-              Refresh
-            </Link>
           </div>
 
-          <div className="mt-8">
-            {!showFallback ? (
-              <div
-                className="prose prose-invert max-w-none text-[var(--cb-text-muted)] prose-p:text-sm prose-a:text-[var(--cb-cyan)] prose-a:underline prose-headings:text-[var(--cb-text)]"
-                dangerouslySetInnerHTML={{ __html: data.html }}
-              />
-            ) : (
-              <p className="rounded-lg border border-white/10 bg-white/5 p-4 text-sm text-[var(--cb-text-muted)]">
-                Couldn&apos;t load the mirrored version right now. Please use
-                the official link below.
-              </p>
-            )}
-          </div>
-
-          {showFallback && (
-            <div className="mt-4">
+          <div className="prose prose-invert mt-8 max-w-none text-[var(--cb-text-muted)] prose-p:text-sm prose-p:leading-relaxed first:prose-p:mt-0">
+            <p className="whitespace-pre-line">
+              CloudBeatsAI - Omar Khouja
+              {"\n"}
+              c/o Online-Impressum.de #6083
+              {"\n"}
+              Europaring 90
+              {"\n"}
+              53757 Sankt Augustin
+            </p>
+            <p>
+              E-Mail:{" "}
               <a
-                href={IMPRESSUM_URL}
+                href="mailto:cloudbeatsai@mail.online-impressum.de"
+                className="text-[var(--cb-cyan)] underline"
+              >
+                cloudbeatsai@mail.online-impressum.de
+              </a>
+            </p>
+            <p>
+              Second contact path:{" "}
+              <a
+                href={`${LEGAL_URL}#Zweiter_Kontaktweg`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-lg bg-[var(--cb-pink-strong)] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:opacity-90"
+                className="text-[var(--cb-cyan)] underline"
               >
-                View legal information
+                (link to the external page)
               </a>
-            </div>
-          )}
+            </p>
+            <p className="whitespace-pre-line">
+              Zuständige Regulierungs- und Aufsichtsbehörde:
+              {"\n"}
+              Medienanstalt Hamburg/Schleswig-Holstein
+              {"\n"}
+              Sitz: Deutschland
+            </p>
+            <p>
+              Kein Umsatzsteuerausweis aufgrund Anwendung der
+              Kleinunternehmerregelung gemäß § 19 UStG.
+            </p>
+          </div>
         </div>
       </div>
     </div>
