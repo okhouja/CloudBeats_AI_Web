@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 const GITHUB_URL = "https://github.com/okhouja";
 const LINKEDIN_URL = "https://www.linkedin.com/in/omar-khouja/";
-const OG_IMAGE_ABOUT = "/about/omar.webp";
+const OG_IMAGE_ABOUT = "/about/Omar-Khouja.webp";
 
 export const metadata: Metadata = {
   title: "Behind the Beats | CloudBeats AI",
