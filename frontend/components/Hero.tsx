@@ -83,48 +83,49 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.8 }}
-          className="relative mx-auto mb-8 w-full max-w-7xl overflow-visible px-0 md:mb-16"
+          className="relative mx-auto mb-8 w-full max-w-7xl px-0 md:mb-16"
         >
-          {/* ========== MOBILE (< md): Cloud centered, waves absolute so they can't shift it ========== */}
-          <div className="relative mx-auto w-full max-w-[520px] md:hidden">
-            {/* Left waves */}
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 overflow-hidden">
-              <div className="w-[170px]">
-                <SoundWaves side="left" />
+          {/* Mobile: single relative container, cloud centered, waves absolute behind */}
+          <div className="mx-auto w-full max-w-[520px] overflow-hidden md:hidden">
+            <div className="relative mx-auto w-fit">
+              {/* Left waves: absolute overlay behind cloud */}
+              <div
+                className="pointer-events-none absolute left-[-90px] top-1/2 z-0 -translate-y-1/2 opacity-90"
+                aria-hidden
+              >
+                <div className="block w-[140px] overflow-hidden">
+                  <SoundWaves side="left" />
+                </div>
               </div>
-            </div>
-
-            {/* Right waves */}
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 overflow-hidden">
-              <div className="w-[170px]">
-                <SoundWaves side="right" />
+              {/* Right waves: absolute overlay behind cloud */}
+              <div
+                className="pointer-events-none absolute right-[-90px] top-1/2 z-0 -translate-y-1/2 opacity-90"
+                aria-hidden
+              >
+                <div className="block w-[140px] overflow-hidden">
+                  <SoundWaves side="right" />
+                </div>
               </div>
-            </div>
-
-            {/* Cloud (always centered) */}
-            <div className="relative z-10 flex items-center justify-center">
-              <div className="w-[240px]">
-                <CloudVisual />
+              {/* Cloud: centered, on top */}
+              <div className="relative z-10 flex items-center justify-center">
+                <div className="w-[240px]">
+                  <CloudVisual />
+                </div>
               </div>
             </div>
           </div>
 
-          {/* ========== DESKTOP (md+): Keep your wide layout ========== */}
+          {/* Desktop: wide grid layout */}
           <div className="hidden md:block">
             <div className="mx-auto grid w-full max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-8">
-              {/* Left sound waves */}
               <div className="flex items-center justify-end">
                 <SoundWaves side="left" />
               </div>
-
-              {/* Central cloud */}
               <div className="flex items-center justify-center">
                 <div className="w-[280px] lg:w-[320px]">
                   <CloudVisual />
                 </div>
               </div>
-
-              {/* Right sound waves */}
               <div className="flex items-center justify-start">
                 <SoundWaves side="right" />
               </div>

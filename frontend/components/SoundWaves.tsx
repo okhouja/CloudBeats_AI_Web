@@ -15,7 +15,7 @@ export function SoundWaves({ side }: SoundWavesProps) {
 
   return (
     <div
-      className={`block flex items-center gap-1 md:gap-1.5 ${isLeft ? "flex-row-reverse" : "flex-row"}`}
+      className={`m-0 block flex items-center gap-1 p-0 md:gap-1.5 ${isLeft ? "flex-row-reverse" : "flex-row"}`}
     >
       {bars.map((height, i) => (
         <motion.div
