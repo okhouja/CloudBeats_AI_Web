@@ -38,12 +38,14 @@ export default function ImpressumPage() {
           </div>
 
           <div
-            className="prose prose-invert mt-8 max-w-none
-                        prose-headings:tracking-tight
-                        prose-p:my-2 prose-li:my-1
-                        prose-a:text-sky-300 hover:prose-a:text-sky-200
-                        prose-a:underline prose-a:underline-offset-4
-                        prose-hr:border-white/10"
+            className="
+                    prose prose-invert max-w-none
+                    prose-headings:text-white
+                    prose-p:text-white/85
+                    prose-strong:text-white
+                    prose-a:text-sky-300 hover:prose-a:text-sky-200
+                    prose-hr:border-white/10
+                  "
           >
             <h2>Angaben gemäß § 5 TMG</h2>
             <p className="font-semibold text-[var(--cb-text)]">
