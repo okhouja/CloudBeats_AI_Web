@@ -49,7 +49,7 @@ export default function AboutPage() {
             <div className="shrink-0 md:sticky md:top-24 md:w-[420px]">
               <div className="aspect-video w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_0_40px_rgba(133,215,246,0.08),0_0_20px_rgba(218,67,196,0.06)]">
                 <Image
-                  src="/about/omar.webp"
+                  src="/about/Omar-Khouja.webp"
                   alt="Portrait of Omar Khouja, founder of CloudBeats AI"
                   width={420}
                   height={236}
