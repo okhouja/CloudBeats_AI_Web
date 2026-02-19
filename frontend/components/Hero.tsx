@@ -85,7 +85,7 @@ export function Hero() {
           transition={{ duration: 1.2, delay: 0.8 }}
           className="relative mx-auto mb-8 w-full max-w-7xl px-0 md:mb-16"
         >
-          {/* Mobile: single relative container, cloud centered, waves absolute behind */}
+          {/* Mobile: cloud centered, waves anchored to cloud */}
           <div className="mx-auto w-full max-w-[520px] md:hidden">
             <div className="relative mx-auto w-fit">
               {/* Cloud */}
@@ -95,7 +95,7 @@ export function Hero() {
                 </div>
               </div>
 
-              {/* Left waves: anchored to cloud (outside) */}
+              {/* Left waves */}
               <div
                 className="pointer-events-none absolute top-1/2 right-full -translate-y-1/2 mr-4 z-0 opacity-90"
                 aria-hidden
@@ -103,20 +103,12 @@ export function Hero() {
                 <SoundWaves side="left" />
               </div>
 
-              {/* Right waves: anchored to cloud (outside) */}
+              {/* Right waves */}
               <div
                 className="pointer-events-none absolute top-1/2 left-full -translate-y-1/2 ml-4 z-0 opacity-90"
                 aria-hidden
               >
                 <SoundWaves side="right" />
-              </div>
-            </div>
-          </div>
-              {/* Cloud: centered, on top */}
-              <div className="relative z-10 flex items-center justify-center">
-                <div className="w-[240px]">
-                  <CloudVisual />
-                </div>
               </div>
             </div>
           </div>
