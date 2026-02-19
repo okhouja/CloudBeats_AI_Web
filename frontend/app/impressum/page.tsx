@@ -36,44 +36,56 @@ export default function ImpressumPage() {
             </a>
           </div>
 
-          <div className="prose prose-invert mt-8 max-w-none text-[var(--cb-text-muted)] prose-p:text-sm prose-p:leading-relaxed first:prose-p:mt-0">
-            <p className="whitespace-pre-line">
-              CloudBeatsAI - Omar Khouja
-              {"\n"}
-              c/o Online-Impressum.de #6083
-              {"\n"}
-              Europaring 90
-              {"\n"}
-              53757 Sankt Augustin
-            </p>
-            <p>
-              E-Mail:{" "}
-              <a
-                href="mailto:cloudbeatsai@mail.online-impressum.de"
-                className="text-[var(--cb-cyan)] underline"
-              >
-                cloudbeatsai@mail.online-impressum.de
-              </a>
-            </p>
-            <p>
-              Second contact path:{" "}
-              <a
-                href={`${LEGAL_URL}#Zweiter_Kontaktweg`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[var(--cb-cyan)] underline"
-              >
-                (link to the external page)
-              </a>
-            </p>
-            <p className="whitespace-pre-line">
-              Zuständige Regulierungs- und Aufsichtsbehörde:
-              {"\n"}
-              Medienanstalt Hamburg/Schleswig-Holstein
-              {"\n"}
-              Sitz: Deutschland
-            </p>
-            <p>
+          <div className="mt-8 space-y-6 text-sm leading-relaxed text-white/90">
+            <section>
+              <h2 className="mb-3 text-base font-semibold tracking-wide text-[var(--cb-text)]">
+                Angaben gemäß § 5 TMG
+              </h2>
+              <p className="font-semibold text-[var(--cb-text)]">
+                CloudBeatsAI - Omar Khouja
+              </p>
+              <div className="mt-2 space-y-0.5 text-white/90">
+                <p>c/o Online-Impressum.de #6083</p>
+                <p>Europaring 90</p>
+                <p>53757 Sankt Augustin</p>
+              </div>
+            </section>
+
+            <section className="border-t border-white/10 pt-6">
+              <p>
+                E-Mail:{" "}
+                <a
+                  href="mailto:cloudbeatsai@mail.online-impressum.de"
+                  className="text-[var(--cb-cyan)] underline transition-colors hover:text-white"
+                >
+                  cloudbeatsai@mail.online-impressum.de
+                </a>
+              </p>
+              <p className="mt-2">
+                Second contact path:{" "}
+                <a
+                  href={`${LEGAL_URL}#Zweiter_Kontaktweg`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[var(--cb-cyan)] underline transition-colors hover:text-white"
+                >
+                  Zweiter Kontaktweg (external)
+                </a>
+              </p>
+            </section>
+
+            <section className="border-t border-white/10 pt-6">
+              <p className="text-xs font-semibold uppercase tracking-wide text-white/70">
+                Zuständige Regulierungs- und Aufsichtsbehörde
+              </p>
+              <p className="mt-2 text-white/90">
+                Medienanstalt Hamburg/Schleswig-Holstein
+                <br />
+                Sitz: Deutschland
+              </p>
+            </section>
+
+            <p className="border-t border-white/10 pt-6 text-white/70">
               Kein Umsatzsteuerausweis aufgrund Anwendung der
               Kleinunternehmerregelung gemäß § 19 UStG.
             </p>
