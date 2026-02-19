@@ -78,28 +78,30 @@ export function Hero() {
           Where systems shape sound.
         </motion.p>
 
-        {/* Central cloud with sound waves — grid keeps cloud exactly centered on mobile */}
+        {/* Central cloud with sound waves — strict 3-col grid centers cloud on mobile */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.8 }}
           className="relative mx-auto w-full max-w-7xl overflow-hidden px-0 mb-8 md:mb-16"
         >
-          <div className="grid w-full grid-cols-[1fr_auto_1fr] items-center gap-4 md:gap-8">
+          <div
+            className="mx-auto grid w-full max-w-[520px] grid-cols-[140px_auto_140px] items-center gap-4 overflow-hidden md:max-w-none md:grid-cols-[1fr_auto_1fr] md:gap-8"
+          >
             {/* Left sound waves */}
-            <div className="flex max-w-[120px] justify-end overflow-hidden md:max-w-none md:justify-self-end">
+            <div className="flex items-center justify-end">
               <SoundWaves side="left" />
             </div>
 
             {/* Central cloud */}
-            <div className="flex shrink-0 justify-self-center">
+            <div className="flex items-center justify-center">
               <div className="w-[220px] sm:w-[260px] md:w-[280px] lg:w-[320px]">
                 <CloudVisual />
               </div>
             </div>
 
             {/* Right sound waves */}
-            <div className="flex max-w-[120px] justify-start overflow-hidden md:max-w-none md:justify-self-start">
+            <div className="flex items-center justify-start">
               <SoundWaves side="right" />
             </div>
           </div>

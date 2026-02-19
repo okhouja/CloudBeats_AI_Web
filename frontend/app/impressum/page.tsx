@@ -2,12 +2,8 @@ import Link from "next/link";
 import { getImpressum, IMPRESSUM_URL } from "@/lib/getImpressum";
 
 export default async function ImpressumPage() {
-  let data: Awaited<ReturnType<typeof getImpressum>> | null = null;
-  try {
-    data = await getImpressum();
-  } catch {
-    data = null;
-  }
+  const data = await getImpressum();
+  const showFallback = !data.html || !!data.error;
 
   return (
     <div className="min-h-screen bg-[var(--cb-bg-1)]">
@@ -57,7 +53,7 @@ export default async function ImpressumPage() {
           </div>
 
           <div className="mt-8">
-            {data ? (
+            {!showFallback ? (
               <div
                 className="prose prose-invert max-w-none text-[var(--cb-text-muted)] prose-p:text-sm prose-a:text-[var(--cb-cyan)] prose-a:underline prose-headings:text-[var(--cb-text)]"
                 dangerouslySetInnerHTML={{ __html: data.html }}
@@ -70,7 +66,7 @@ export default async function ImpressumPage() {
             )}
           </div>
 
-          {!data && (
+          {showFallback && (
             <div className="mt-4">
               <a
                 href={IMPRESSUM_URL}
