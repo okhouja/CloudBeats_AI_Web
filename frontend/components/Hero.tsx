@@ -83,21 +83,23 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.8 }}
-          className="relative w-full max-w-7xl mx-auto mb-8 md:mb-16"
+          className="relative mx-auto w-full max-w-7xl px-0 mb-8 md:mb-16"
         >
-          <div className="flex items-center justify-center gap-4 md:gap-8">
+          <div className="mx-auto flex w-full max-w-[520px] items-center justify-center gap-6 sm:gap-8 md:max-w-none">
             {/* Left sound waves */}
-            <div className="flex-1 flex justify-end">
+            <div className="flex w-[96px] shrink-0 items-center justify-center sm:w-[120px] md:w-auto md:flex-1 md:justify-end">
               <SoundWaves side="left" />
             </div>
 
             {/* Central cloud */}
-            <div className="flex-shrink-0 w-[220px] md:w-[280px] lg:w-[320px]">
-              <CloudVisual />
+            <div className="mx-auto flex shrink-0 items-center justify-center">
+              <div className="w-[220px] sm:w-[260px] md:w-[280px] lg:w-[320px]">
+                <CloudVisual />
+              </div>
             </div>
 
             {/* Right sound waves */}
-            <div className="flex-1 flex justify-start">
+            <div className="flex w-[96px] shrink-0 items-center justify-center sm:w-[120px] md:w-auto md:flex-1 md:justify-start">
               <SoundWaves side="right" />
             </div>
           </div>
