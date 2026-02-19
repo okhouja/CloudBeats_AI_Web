@@ -86,26 +86,32 @@ export function Hero() {
           className="relative mx-auto mb-8 w-full max-w-7xl px-0 md:mb-16"
         >
           {/* Mobile: single relative container, cloud centered, waves absolute behind */}
-          <div className="mx-auto w-full max-w-[520px] overflow-hidden md:hidden">
+          <div className="mx-auto w-full max-w-[520px] md:hidden">
             <div className="relative mx-auto w-fit">
-              {/* Left waves: absolute overlay behind cloud */}
-              <div
-                className="pointer-events-none absolute left-[-90px] top-1/2 z-0 -translate-y-1/2 opacity-90"
-                aria-hidden
-              >
-                <div className="block w-[140px] overflow-hidden">
-                  <SoundWaves side="left" />
+              {/* Cloud */}
+              <div className="relative z-10 flex items-center justify-center">
+                <div className="w-[240px]">
+                  <CloudVisual />
                 </div>
               </div>
-              {/* Right waves: absolute overlay behind cloud */}
+
+              {/* Left waves: anchored to cloud (outside) */}
               <div
-                className="pointer-events-none absolute right-[-90px] top-1/2 z-0 -translate-y-1/2 opacity-90"
+                className="pointer-events-none absolute top-1/2 right-full -translate-y-1/2 mr-4 z-0 opacity-90"
                 aria-hidden
               >
-                <div className="block w-[140px] overflow-hidden">
-                  <SoundWaves side="right" />
-                </div>
+                <SoundWaves side="left" />
               </div>
+
+              {/* Right waves: anchored to cloud (outside) */}
+              <div
+                className="pointer-events-none absolute top-1/2 left-full -translate-y-1/2 ml-4 z-0 opacity-90"
+                aria-hidden
+              >
+                <SoundWaves side="right" />
+              </div>
+            </div>
+          </div>
               {/* Cloud: centered, on top */}
               <div className="relative z-10 flex items-center justify-center">
                 <div className="w-[240px]">
