@@ -9,11 +9,11 @@ import { StarField } from "./StarField";
 
 export function Hero() {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-[#0a0015] via-[#0f0525] to-[#051525]">
+    <div className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-[#0a0015] via-[#0f0525] to-[#051525]">
       {/* Animated background gradients */}
       <div className="absolute inset-0">
         <motion.div
-          className="absolute top-0 left-0 w-[800px] h-[800px] rounded-full opacity-20"
+          className="absolute left-0 top-0 h-[800px] w-[800px] rounded-full opacity-20"
           style={{
             background: "radial-gradient(circle, #da43c4 0%, transparent 70%)",
           }}
@@ -29,7 +29,7 @@ export function Hero() {
           }}
         />
         <motion.div
-          className="absolute bottom-0 right-0 w-[900px] h-[900px] rounded-full opacity-20"
+          className="absolute bottom-0 right-0 h-[900px] w-[900px] rounded-full opacity-20"
           style={{
             background: "radial-gradient(circle, #06b6d4 0%, transparent 70%)",
           }}
@@ -50,7 +50,7 @@ export function Hero() {
       <StarField />
 
       {/* Main content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 pt-6 md:pt-14">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 pt-6 md:pt-14">
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -73,43 +73,68 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="text-center text-lg text-gray-300 md:text-xl lg:text-2xl mb-8 md:mb-16"
+          className="mb-8 text-center text-lg text-gray-300 md:mb-16 md:text-xl lg:text-2xl"
         >
           Where systems shape sound.
         </motion.p>
 
-        {/* Central cloud with sound waves — strict 3-col grid centers cloud on mobile */}
+        {/* Cloud + Waves */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.8 }}
-          className="relative mx-auto w-full max-w-7xl overflow-hidden px-0 mb-8 md:mb-16"
+          className="relative mx-auto mb-8 w-full max-w-7xl overflow-visible px-0 md:mb-16"
         >
-          <div
-            className="mx-auto grid w-full max-w-[520px] grid-cols-[140px_auto_140px] items-center gap-4 overflow-hidden md:max-w-none md:grid-cols-[1fr_auto_1fr] md:gap-8"
-          >
-            {/* Left sound waves */}
-            <div className="flex items-center justify-end">
-              <SoundWaves side="left" />
-            </div>
-
-            {/* Central cloud */}
-            <div className="flex items-center justify-center">
-              <div className="w-[220px] sm:w-[260px] md:w-[280px] lg:w-[320px]">
-                <CloudVisual />
+          {/* ========== MOBILE (< md): Cloud centered, waves absolute so they can't shift it ========== */}
+          <div className="relative mx-auto w-full max-w-[520px] md:hidden">
+            {/* Left waves */}
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 overflow-hidden">
+              <div className="w-[170px]">
+                <SoundWaves side="left" />
               </div>
             </div>
 
-            {/* Right sound waves */}
-            <div className="flex items-center justify-start">
-              <SoundWaves side="right" />
+            {/* Right waves */}
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 overflow-hidden">
+              <div className="w-[170px]">
+                <SoundWaves side="right" />
+              </div>
+            </div>
+
+            {/* Cloud (always centered) */}
+            <div className="relative z-10 flex items-center justify-center">
+              <div className="w-[240px]">
+                <CloudVisual />
+              </div>
+            </div>
+          </div>
+
+          {/* ========== DESKTOP (md+): Keep your wide layout ========== */}
+          <div className="hidden md:block">
+            <div className="mx-auto grid w-full max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-8">
+              {/* Left sound waves */}
+              <div className="flex items-center justify-end">
+                <SoundWaves side="left" />
+              </div>
+
+              {/* Central cloud */}
+              <div className="flex items-center justify-center">
+                <div className="w-[280px] lg:w-[320px]">
+                  <CloudVisual />
+                </div>
+              </div>
+
+              {/* Right sound waves */}
+              <div className="flex items-center justify-start">
+                <SoundWaves side="right" />
+              </div>
             </div>
           </div>
         </motion.div>
       </div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0015] to-transparent pointer-events-none" />
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0015] to-transparent" />
     </div>
   );
 }
