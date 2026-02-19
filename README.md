@@ -27,14 +27,15 @@ Preview: https://cloudbeats-ai.vercel.app
 ---
 
 ## 📂 Project Structure
-
+```
 frontend/
-app/
-components/
-public/
-releases/
-og/
-about/
+    app/
+    components/
+    public/
+    releases/
+    og/
+    about/
+```
 
 ---
 
