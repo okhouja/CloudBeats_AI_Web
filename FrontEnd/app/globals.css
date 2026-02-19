@@ -1,0 +1,155 @@
+/* cloudbeats-web/app/globals.css */
+@import "tailwindcss";
+
+/* =========================
+   1) TOKENS (Project Colors)
+   ========================= */
+:root {
+  /* App default colors (used by body) */
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* CloudBeats palette */
+  --cb-bg-1: #0A0015;
+  --cb-bg-2: #0F0525;
+  --cb-bg-3: #051525;
+
+  --cb-pink: #DA43C4;
+  --cb-pink-strong: #C122F0;
+  /* badge + primary button */
+  --cb-pink-dark: #8B2A7D;
+
+  --cb-cyan: #85D7F6;
+
+  --cb-text: #ffffff;
+  --cb-text-muted: rgba(255, 255, 255, 0.80);
+
+  /* Hero animation tuning */
+  --hero-breathe-scale: 1.03;
+  /* cinematic default */
+  --hero-stars-opacity-min: 0.18;
+  /* stars subtle */
+  --hero-stars-opacity-max: 0.32;
+}
+
+/* Slightly smaller breathing on small screens */
+@media (max-width: 640px) {
+  :root {
+    --hero-breathe-scale: 1.02;
+  }
+}
+
+/* Dark mode (system) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+/* =========================
+   2) BASE
+   ========================= */
+html {
+  scroll-behavior: smooth;
+}
+
+:target {
+  scroll-margin-top: 96px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+/* =========================
+   3) HERO LAYERS
+   ========================= */
+
+/* Background: cinematic + glows */
+.hero-bg {
+  background:
+    radial-gradient(60% 50% at 50% 35%, rgba(218, 67, 196, 0.22) 0%, rgba(218, 67, 196, 0) 60%),
+    radial-gradient(45% 40% at 70% 55%, rgba(133, 215, 246, 0.16) 0%, rgba(133, 215, 246, 0) 60%),
+    radial-gradient(70% 60% at 55% 65%, rgba(50, 86, 149, 0.18) 0%, rgba(50, 86, 149, 0) 65%),
+    linear-gradient(180deg, var(--cb-bg-1) 0%, var(--cb-bg-2) 50%, var(--cb-bg-3) 100%);
+}
+
+/* Stars: optional layer */
+.hero-stars {
+  pointer-events: none;
+
+  /* Figma stars */
+  background-image: url("/stars.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  /* IMPORTANT: keep stars 1:1 */
+  background-size: 100% 100%;
+
+  /* visibility */
+  opacity: 0.55;
+  filter: none;
+
+  /* REMOVE blend-mode */
+  mix-blend-mode: normal;
+
+  will-change: opacity;
+  animation: hero-stars-twinkle 7s ease-in-out infinite;
+}
+
+
+
+
+
+/* =========================
+   4) HERO ANIMATIONS
+   ========================= */
+
+/* Cloud breathing (scale only) */
+.hero-graphic-breathing {
+  display: inline-block;
+  transform-origin: center center;
+  will-change: transform;
+  animation: hero-cloud-breathe 7s ease-in-out infinite;
+}
+
+@keyframes hero-cloud-breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(var(--hero-breathe-scale));
+  }
+}
+
+/* Stars twinkle (subtle) */
+@keyframes hero-stars-twinkle {
+  0% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 0.65;
+  }
+
+  100% {
+    opacity: 0.45;
+  }
+}
+
+/* =========================
+   5) ACCESSIBILITY
+   ========================= */
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-graphic-breathing,
+  .hero-stars {
+    animation: none !important;
+  }
+}
