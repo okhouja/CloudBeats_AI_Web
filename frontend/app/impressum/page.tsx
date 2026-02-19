@@ -1,108 +1,98 @@
 // app/impressum/page.tsx
-import Link from "next/link";
 
 export const metadata = {
   title: "Impressum | CloudBeats AI",
-  description: "Legal information (Impressum) for CloudBeats AI.",
+  description: "Legal information for CloudBeats AI.",
 };
-
-const EXTERNAL_IMPRESSUM_URL = "https://mein.online-impressum.de/cloudbeatsai/";
-const EXTERNAL_SECOND_CONTACT_URL =
-  "https://mein.online-impressum.de/cloudbeatsai/#Zweiter_Kontaktweg";
 
 export default function ImpressumPage() {
   return (
-    <main className="relative min-h-[calc(100vh-80px)] px-4 pb-24 pt-28">
-      <div className="mx-auto w-full max-w-5xl">
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm md:p-10">
+    <main className="min-h-screen bg-gradient-to-br from-[#12021f] via-[#1a0530] to-[#0b0220] px-4 pt-28 pb-24">
+      <div className="mx-auto max-w-4xl">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-md md:p-12">
+
           {/* Header */}
           <div className="text-center">
-            <h1 className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
+            <h1 className="text-3xl font-semibold text-white md:text-4xl">
               Impressum
             </h1>
 
-            <div className="mt-5">
-              <a
-                href={EXTERNAL_IMPRESSUM_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-xl bg-fuchsia-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-fuchsia-500 focus:outline-none focus:ring-2 focus:ring-fuchsia-400/60"
-              >
-                View legal information
-              </a>
-            </div>
+            <a
+              href="https://mein.online-impressum.de/cloudbeatsai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-block rounded-xl bg-fuchsia-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-fuchsia-500"
+            >
+              View legal information
+            </a>
           </div>
 
           {/* Content */}
-          <div
-            className="
-              mt-10
-              prose prose-invert max-w-none
-              prose-headings:text-white
-              prose-strong:text-white
-              prose-p:text-white/85
-              prose-a:text-sky-300 hover:prose-a:text-sky-200
-              prose-a:underline prose-a:underline-offset-4
-              prose-hr:border-white/10
-              prose-h4:uppercase prose-h4:tracking-wider prose-h4:text-white/70
-              prose-p:leading-relaxed
-            "
-          >
-            <h3>Angaben gemäß § 5 TMG</h3>
+          <div className="mt-10 space-y-8 text-white/85 leading-relaxed">
 
-            <p>
-              <strong>CloudBeatsAI – Omar Khouja</strong>
-              <br />
-              c/o Online-Impressum.de #6083
-              <br />
-              Europaring 90
-              <br />
-              53757 Sankt Augustin
-            </p>
+            <div>
+              <p className="text-sm uppercase tracking-wider text-white/60">
+                Angaben gemäß § 5 TMG
+              </p>
 
-            <hr />
+              <p className="mt-3 font-semibold text-white">
+                CloudBeatsAI – Omar Khouja
+              </p>
 
-            <p>
-              <strong>E-Mail:</strong>{" "}
-              <a href="mailto:cloudbeatsai@mail.online-impressum.de">
-                cloudbeatsai@mail.online-impressum.de
-              </a>
-              <br />
-              <strong>Zweiter Kontaktweg:</strong>{" "}
-              <a
-                href={EXTERNAL_SECOND_CONTACT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Zweiter Kontaktweg (external)
-              </a>
-            </p>
+              <p>c/o Online-Impressum.de #6083</p>
+              <p>Europaring 90</p>
+              <p>53757 Sankt Augustin</p>
+            </div>
 
-            <hr />
+            <hr className="border-white/10" />
 
-            <h4>Zuständige Regulierungs- und Aufsichtsbehörde</h4>
-            <p>
-              Medienanstalt Hamburg/Schleswig-Holstein
-              <br />
-              <span className="text-white/70">Sitz: Deutschland</span>
-            </p>
+            <div>
+              <p>
+                <span className="font-semibold text-white">E-Mail:</span>{" "}
+                <a
+                  href="mailto:cloudbeatsai@mail.online-impressum.de"
+                  className="text-sky-300 underline underline-offset-4 hover:text-sky-200"
+                >
+                  cloudbeatsai@mail.online-impressum.de
+                </a>
+              </p>
 
-            <hr />
+              <p className="mt-2">
+                <span className="font-semibold text-white">
+                  Zweiter Kontaktweg:
+                </span>{" "}
+                <a
+                  href="https://mein.online-impressum.de/cloudbeatsai/#Zweiter_Kontaktweg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sky-300 underline underline-offset-4 hover:text-sky-200"
+                >
+                  External contact link
+                </a>
+              </p>
+            </div>
+
+            <hr className="border-white/10" />
+
+            <div>
+              <p className="text-sm uppercase tracking-wider text-white/60">
+                Zuständige Regulierungs- und Aufsichtsbehörde
+              </p>
+
+              <p className="mt-2">
+                Medienanstalt Hamburg/Schleswig-Holstein
+              </p>
+
+              <p className="text-white/70">Sitz: Deutschland</p>
+            </div>
+
+            <hr className="border-white/10" />
 
             <p className="text-white/70">
               Kein Umsatzsteuerausweis aufgrund Anwendung der
               Kleinunternehmerregelung gemäß § 19 UStG.
             </p>
 
-            {/* Optional: a small back link (if you want) */}
-            <p className="mt-8">
-              <Link
-                href="/"
-                className="text-white/70 no-underline hover:text-white"
-              >
-                ← Back to Home
-              </Link>
-            </p>
           </div>
         </div>
       </div>
