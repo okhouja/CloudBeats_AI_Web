@@ -24,14 +24,18 @@ export function CloudVisual() {
   }, []);
 
   return (
-    <div className="relative h-full w-full">
+    <div className="relative h-full w-full overflow-visible bg-transparent">
 
-      {/* Glow effect behind cloud */}
+      {/* Glow effect behind cloud — radial mask fades edges so no pill/box outline */}
       <motion.div
-        className="absolute inset-[12%] rounded-full blur-3xl"
+        className="absolute inset-[12%] rounded-full blur-3xl bg-transparent"
         style={{
           background:
             "radial-gradient(ellipse, rgba(218, 67, 196, 0.5) 0%, rgba(6, 182, 212, 0.4) 100%)",
+          WebkitMaskImage:
+            "radial-gradient(closest-side, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 85%)",
+          maskImage:
+            "radial-gradient(closest-side, rgba(0,0,0,1) 55%, rgba(0,0,0,0) 85%)",
         }}
         animate={{
           scale: [1, 1.08, 1],
@@ -121,19 +125,19 @@ export function CloudVisual() {
         ))}
       </motion.svg>
 
-      {/* Pulsing ring around cloud - synced with breathing */}
-<motion.div
-  className="absolute inset-0 rounded-full border border-cyan-300/25"
-  animate={{
-    scale: [1, 1.18, 1],
-    opacity: [0.25, 0, 0.25],
-  }}
-  transition={{
-    duration: 7,
-    repeat: Infinity,
-    ease: "easeInOut",
-  }}
-/>
+      {/* Pulsing ring around cloud - synced with breathing (no border/ring to avoid edges) */}
+      <motion.div
+        className="absolute inset-0 rounded-full"
+        animate={{
+          scale: [1, 1.18, 1],
+          opacity: [0.25, 0, 0.25],
+        }}
+        transition={{
+          duration: 7,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
 
     </div>
   );
