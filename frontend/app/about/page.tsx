@@ -9,11 +9,11 @@ const OG_IMAGE_ABOUT = "/about/Omar-Khouja.webp";
 export const metadata: Metadata = {
   title: "Behind the Beats | CloudBeats AI",
   description:
-    "The story behind CloudBeats AI — from sound editing to cloud systems and AI-assisted music.",
+    "The story behind CloudBeats AI — where cloud systems, sound design, and AI experimentation converge.",
   openGraph: {
     title: "Behind the Beats | CloudBeats AI",
     description:
-      "The story behind CloudBeats AI — from sound editing to cloud systems and AI-assisted music.",
+      "The story behind CloudBeats AI — where cloud systems, sound design, and AI experimentation converge.",
     url: "/about",
     images: [
       {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Behind the Beats | CloudBeats AI",
     description:
-      "The story behind CloudBeats AI — from sound editing to cloud systems and AI-assisted music.",
+      "The story behind CloudBeats AI — where cloud systems, sound design, and AI experimentation converge.",
     images: [OG_IMAGE_ABOUT],
   },
 };
@@ -71,61 +71,79 @@ export default function AboutPage() {
                 <p className="text-[var(--cb-text)]/95">
                   Before AI. Before DevOps. There was experimentation.
                 </p>
+
                 <p className="text-[var(--cb-text)]/90">
                   Between 2001 and 2011, I spent countless nights in front of
                   SoundForge and Sony Vegas — cutting audio, looping fragments,
                   stretching textures beyond their natural limits. I had no
                   formal training. No synthesizers. No roadmap.
                 </p>
+
                 <p className="text-[var(--cb-text-muted)]">
                   I didn&apos;t think of it as music.
                   <br />
                   I was simply shaping sound.
                 </p>
+
                 <p className="text-[var(--cb-text-muted)]">
                   At the time, producing electronic music properly required tools
                   and knowledge that felt out of reach. So I worked with what I
-                  had: curiosity, repetition, and a pair of ears that were
-                  always searching.
+                  had: curiosity, repetition, and a pair of ears that were always
+                  searching.
                 </p>
+
                 <p className="text-[var(--cb-text-muted)]">
                   Life eventually redirected me toward systems.
                 </p>
+
+                {/* UPDATED: broader identity */}
                 <p className="text-[var(--cb-text-muted)]">
-                  I moved to Germany and became a DevOps & Multi-Cloud engineer,
-                  building infrastructure across AWS and Azure. Automation,
-                  scalability, reliability — these became my new instruments. I
-                  learned to design systems the way I once edited sound:
-                  iteratively, precisely, patiently.
+                  I moved to Germany and built a career across cloud engineering,
+                  DevOps, full-stack development, and e-commerce systems.
+                  Infrastructure, backend logic, automation pipelines, and scalable
+                  architectures became part of the same creative mindset.
                 </p>
+
+                <p className="text-[var(--cb-text-muted)]">
+                  Designing distributed systems felt surprisingly familiar — it was
+                  still about structure, timing, and flow.
+                </p>
+
                 <p className="text-[var(--cb-text-muted)]">
                   But something stayed constant.
                 </p>
+
                 <p className="text-[var(--cb-text-muted)]">
                   The ears never stopped listening.
                 </p>
+
                 <p className="text-[var(--cb-text-muted)]">
                   Years later, a personal hearing challenge reshaped my
                   relationship with sound. Silence was no longer neutral.
                   Awareness became sharper. Listening became intentional.
                 </p>
+
                 <p className="text-[var(--cb-text-muted)]">
                   Around the same time, AI music tools emerged.
                 </p>
+
                 <p className="text-[var(--cb-text-muted)]">
-                  For the first time, the engineer and the experimenter could
-                  truly collaborate.
+                  For the first time, the engineer and the experimenter could truly
+                  collaborate.
                 </p>
+
                 <p className="text-[var(--cb-text-muted)]">
                   I began learning Ableton Live — not casually, but structurally.
-                  And I discovered something humbling: learning music production
-                  is not easier than learning programming. Both demand discipline.
-                  Both require iteration. Both expose your limitations before
-                  they reward your persistence.
+                  And I discovered something humbling: learning music production is
+                  not easier than learning programming. Both demand discipline.
+                  Both require iteration. Both expose your limitations before they
+                  reward your persistence.
                 </p>
+
                 <p className="text-[var(--cb-text-muted)]">
                   The journey is long.
                 </p>
+
                 <p className="text-[var(--cb-text-muted)]">
                   AI did not remove that journey.
                   <br />
@@ -133,16 +151,49 @@ export default function AboutPage() {
                   <br />
                   It expanded the canvas.
                 </p>
+
+                {/* NEW: design/frontend challenge + digital ecosystems */}
+                <p className="text-[var(--cb-text-muted)]">
+                  Along the way, I challenged myself outside my comfort zone —
+                  learning front-end craft and design fundamentals even when it
+                  wasn&apos;t my specialty, just to give this project a real home on
+                  the web.
+                </p>
+
+                <p className="text-[var(--cb-text-muted)]">
+                  Understanding how digital ecosystems shape creativity has become
+                  part of the journey as well.
+                </p>
+
+                {/* NEW: future direction */}
+                <p className="text-[var(--cb-text-muted)]">
+                  Today, I am expanding that foundation into data analytics and
+                  machine learning — exploring how intelligence, systems, and sound
+                  can intersect.
+                </p>
+
+                {/* UPDATED: clearer positioning */}
                 <p className="text-[var(--cb-text-muted)]">
                   CloudBeats AI was born at the intersection of structured
                   infrastructure and structured sound — where cloud architecture
                   meets sonic architecture.
                 </p>
 
+                <p className="text-[var(--cb-text-muted)]">
+                  It&apos;s not only a music project.
+                  <br />
+                  It&apos;s a living laboratory — a long experiment where systems
+                  thinking meets sound.
+                </p>
+
+                {/* UPDATED: stronger ending */}
                 <blockquote className="my-8 rounded-xl border-l border-white/15 bg-white/5 py-4 pl-4 pr-4 italic text-white/90">
                   This is not a comeback.
                   <br />
-                  This is coming home to sound, through the cloud.
+                  It is an integration.
+                  <br />
+                  Engineering, data, systems, and sound — converging into one long
+                  experiment.
                 </blockquote>
 
                 <p className="text-sm text-[var(--cb-text-muted)]">
