@@ -24,11 +24,11 @@ export function CloudVisual() {
   }, []);
 
   return (
-    <div className="relative w-44 h-28 md:w-64 md:h-40 lg:w-80 lg:h-48">
+    <div className="relative h-full w-full">
 
       {/* Glow effect behind cloud */}
       <motion.div
-        className="absolute inset-0 rounded-full blur-3xl"
+        className="absolute inset-[12%] rounded-full blur-3xl"
         style={{
           background:
             "radial-gradient(ellipse, rgba(218, 67, 196, 0.5) 0%, rgba(6, 182, 212, 0.4) 100%)",
@@ -47,8 +47,9 @@ export function CloudVisual() {
       {/* Cloud shape from Figma with breathing animation */}
       <motion.svg
         viewBox="0 0 294 184"
-        className="relative z-10 w-full h-full drop-shadow-2xl"
+        className="relative z-10 block h-full w-full drop-shadow-2xl"
         fill="none"
+        preserveAspectRatio="xMidYMid meet"
         animate={{
           scale: [1, 1.04, 1],
         }}

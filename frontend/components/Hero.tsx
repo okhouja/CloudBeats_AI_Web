@@ -7,9 +7,38 @@ import { CloudVisual } from "./CloudVisual";
 import { SoundWaves } from "./SoundWaves";
 import { StarField } from "./StarField";
 
+function CloudWithWaves({ cloudWidthClass }: { cloudWidthClass: string }) {
+  return (
+    <div className="relative mx-auto w-fit">
+      {/* Cloud: fixed-size aspect-ratio container so it always has height on desktop */}
+      <div className="relative z-10 mx-auto">
+        <div
+          className={`relative aspect-[294/184] min-h-[120px] md:min-h-[160px] ${cloudWidthClass}`}
+        >
+          <CloudVisual />
+        </div>
+      </div>
+      {/* Left waves — tighter spacing */}
+      <div
+        className="pointer-events-none absolute top-1/2 right-full z-0 -translate-y-1/2 opacity-90 mr-3 md:mr-5"
+        aria-hidden
+      >
+        <SoundWaves side="left" />
+      </div>
+      {/* Right waves */}
+      <div
+        className="pointer-events-none absolute top-1/2 left-full z-0 -translate-y-1/2 opacity-90 ml-3 md:ml-5"
+        aria-hidden
+      >
+        <SoundWaves side="right" />
+      </div>
+    </div>
+  );
+}
+
 export function Hero() {
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-[#0a0015] via-[#0f0525] to-[#051525]">
+    <div className="relative h-[100dvh] min-h-[100dvh] w-full overflow-hidden bg-gradient-to-br from-[#0a0015] via-[#0f0525] to-[#051525]">
       {/* Animated background gradients */}
       <div className="absolute inset-0">
         <motion.div
@@ -78,56 +107,15 @@ export function Hero() {
           Where systems shape sound.
         </motion.p>
 
-        {/* Cloud + Waves */}
+        {/* Cloud + Waves — same unit for mobile and desktop */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.8 }}
           className="relative mx-auto mb-8 w-full max-w-7xl px-0 md:mb-16"
         >
-          {/* Mobile: cloud centered, waves anchored to cloud */}
-          <div className="mx-auto w-full max-w-[520px] md:hidden">
-            <div className="relative mx-auto w-fit">
-              {/* Cloud */}
-              <div className="relative z-10 flex items-center justify-center">
-                <div className="w-[240px]">
-                  <CloudVisual />
-                </div>
-              </div>
-
-              {/* Left waves */}
-              <div
-                className="pointer-events-none absolute top-1/2 right-full -translate-y-1/2 mr-4 z-0 opacity-90"
-                aria-hidden
-              >
-                <SoundWaves side="left" />
-              </div>
-
-              {/* Right waves */}
-              <div
-                className="pointer-events-none absolute top-1/2 left-full -translate-y-1/2 ml-4 z-0 opacity-90"
-                aria-hidden
-              >
-                <SoundWaves side="right" />
-              </div>
-            </div>
-          </div>
-
-          {/* Desktop: wide grid layout */}
-          <div className="hidden md:block">
-            <div className="mx-auto grid w-full max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-8">
-              <div className="flex items-center justify-end">
-                <SoundWaves side="left" />
-              </div>
-              <div className="flex items-center justify-center">
-                <div className="w-[280px] lg:w-[320px]">
-                  <CloudVisual />
-                </div>
-              </div>
-              <div className="flex items-center justify-start">
-                <SoundWaves side="right" />
-              </div>
-            </div>
+          <div className="mx-auto mt-10 w-full max-w-[900px] overflow-hidden">
+            <CloudWithWaves cloudWidthClass="w-[240px] md:w-[320px] lg:w-[360px]" />
           </div>
         </motion.div>
       </div>
