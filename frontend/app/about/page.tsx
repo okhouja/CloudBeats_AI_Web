@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     description:
       "The story behind CloudBeats AI — where cloud systems, sound design, and AI experimentation converge.",
     url: "/about",
+    siteName: "CloudBeats AI",
     images: [
       {
         url: "/about/Omar-Khouja.webp",
