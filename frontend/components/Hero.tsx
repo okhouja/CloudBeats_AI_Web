@@ -79,7 +79,7 @@ export function Hero() {
       <StarField />
 
       {/* Main content */}
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 pt-6 md:pt-14">
+      <div className="relative z-10 flex min-w-0 h-full w-full max-w-full flex-col items-center justify-center px-4 pt-6 md:pt-14">
         {/* Logo */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -112,9 +112,9 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.8 }}
-          className="relative mx-auto mb-8 w-full max-w-7xl px-0 md:mb-16"
+          className="relative mx-auto mb-8 w-full max-w-full max-w-7xl px-0 md:mb-16 overflow-hidden"
         >
-          <div className="mx-auto mt-10 w-full max-w-[900px] overflow-hidden">
+          <div className="mx-auto mt-10 w-full max-w-[900px] overflow-hidden min-w-0">
             <CloudWithWaves cloudWidthClass="w-[240px] md:w-[320px] lg:w-[360px]" />
           </div>
         </motion.div>

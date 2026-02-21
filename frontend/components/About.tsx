@@ -3,10 +3,10 @@ import Link from "next/link";
 export function About() {
   return (
     <section
-      className="bg-[var(--cb-bg-1)] px-4 py-10 md:py-14"
+      className="bg-[var(--cb-bg-1)] overflow-hidden px-4 py-10 md:py-14"
       aria-labelledby="about-heading"
     >
-      <div className="mx-auto max-w-xl">
+      <div className="mx-auto min-w-0 max-w-xl">
         <h2
           id="about-heading"
           className="mb-4 text-center text-sm font-medium uppercase tracking-[0.35em] text-[var(--cb-text-muted)]"

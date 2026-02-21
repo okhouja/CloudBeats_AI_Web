@@ -4,11 +4,11 @@ import Image from "next/image";
 export function Now() {
   return (
     <section
-      className="bg-[var(--cb-bg-1)] px-4 py-8 md:py-10"
+      className="bg-[var(--cb-bg-1)] overflow-hidden px-4 py-8 md:py-10"
       aria-labelledby="now-heading"
     >
       <div
-        className="mx-auto max-w-2xl border-t border-white/10 pt-10 md:max-w-3xl"
+        className="mx-auto min-w-0 max-w-2xl border-t border-white/10 pt-10 md:max-w-3xl"
         style={{
           boxShadow: "0 -1px 0 0 rgba(133, 215, 246, 0.06)",
         }}
@@ -23,7 +23,7 @@ export function Now() {
               className="max-w-[240px] rounded-xl object-cover shadow-[0_8px_32px_rgba(133,215,246,0.12)]"
             />
           </div>
-          <div className="flex flex-col items-center gap-3 text-center md:items-start md:text-left">
+          <div className="min-w-0 flex flex-col items-center gap-3 text-center md:items-start md:text-left">
             <p
               id="now-label"
               className="text-xs font-medium uppercase tracking-widest text-[var(--cb-text-muted)]"
