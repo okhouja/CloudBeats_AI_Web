@@ -1,21 +1,11 @@
-import { About } from "@/components/About";
-import { Creator } from "@/components/Creator";
-import Footer from "@/components/Footer";
-import Hero from "@/components/Hero";
-import { Manifest } from "@/components/Manifest";
-import { Now } from "@/components/Now";
-import { PlatformsGrid } from "@/components/PlatformsGrid";
+import { HomePageContent } from "@/components/HomePageContent";
 
-export default function Home() {
-  return (
-    <>
-      <Hero />
-      <Now />
-      <Manifest />
-      <About />
-      <PlatformsGrid />
-      <Creator />
-      <Footer />
-    </>
-  );
+export const metadata = {
+  title: "CloudBeats AI",
+  description:
+    "Electronic music & sonic systems curated by an Artist Engineer. Where systems shape sound.",
+};
+
+export default function HomePage() {
+  return <HomePageContent />;
 }

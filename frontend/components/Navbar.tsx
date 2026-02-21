@@ -6,10 +6,11 @@ import { usePathname } from "next/navigation";
 
 export function Navbar() {
   const pathname = usePathname();
+  const isV1 = pathname.startsWith("/v1");
   const isV2 = pathname.startsWith("/v2");
-  const basePath = isV2 ? "/v2" : "";
-  const hasListenContact = pathname === "/" || pathname.startsWith("/v2");
-  const isAboutPage = pathname === "/about" || pathname === "/v2/about";
+  const basePath = isV1 ? "/v1" : isV2 ? "/v2" : "";
+  const hasListenContact = pathname === "/" || pathname === "/v2" || pathname === "/v1";
+  const isAboutPage = pathname === "/about" || pathname === "/v2/about" || pathname === "/v1/about";
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 w-full max-w-full overflow-hidden border-b border-white/10 bg-white/5 backdrop-blur-md">
