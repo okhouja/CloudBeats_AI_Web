@@ -6,13 +6,15 @@ import { usePathname } from "next/navigation";
 
 export function Navbar() {
   const pathname = usePathname();
-  const isHome = pathname === "/";
-  const hasListenContact = pathname === "/" || pathname === "/v2";
+  const isV2 = pathname.startsWith("/v2");
+  const basePath = isV2 ? "/v2" : "";
+  const hasListenContact = pathname === "/" || pathname.startsWith("/v2");
+  const isAboutPage = pathname === "/about" || pathname === "/v2/about";
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 w-full max-w-full overflow-hidden border-b border-white/10 bg-white/5 backdrop-blur-md">
       <nav className="mx-auto flex min-w-0 max-w-6xl items-center justify-between gap-4 px-4 py-3" aria-label="Main">
-        <Link href="/" className="flex shrink-0 items-center gap-2">
+        <Link href={basePath || "/"} className="flex shrink-0 items-center gap-2">
           <Image
             src="/logo_cloud.svg"
             alt=""
@@ -32,21 +34,21 @@ export function Navbar() {
         </Link>
         <div className="flex min-w-0 shrink items-center gap-4 whitespace-nowrap sm:gap-6">
           <Link
-            href="/about"
-            className={`text-sm font-medium transition-colors hover:text-white ${pathname === "/about" ? "text-white" : "text-white/80"}`}
+            href={`${basePath}/about`}
+            className={`text-sm font-medium transition-colors hover:text-white ${isAboutPage ? "text-white" : "text-white/80"}`}
           >
             <span className="hidden sm:inline">Behind the Beats</span>
             <span className="sm:hidden">Beats</span>
           </Link>
           <Link
-            href={hasListenContact ? "#listen" : "/#listen"}
-            className={`text-sm font-medium transition-colors hover:text-white ${pathname === "/about" ? "text-white/80" : "text-white/90"}`}
+            href={hasListenContact ? "#listen" : (basePath ? `${basePath}/` : "/") + "#listen"}
+            className={`text-sm font-medium transition-colors hover:text-white ${isAboutPage ? "text-white/80" : "text-white/90"}`}
           >
             Listen
           </Link>
           <Link
-            href={hasListenContact ? "#contact" : "/#contact"}
-            className={`hidden text-sm font-medium transition-colors hover:text-white sm:inline-block ${pathname === "/about" ? "text-white/80" : "text-white/90"}`}
+            href={hasListenContact ? "#contact" : (basePath ? `${basePath}/` : "/") + "#contact"}
+            className={`hidden text-sm font-medium transition-colors hover:text-white sm:inline-block ${isAboutPage ? "text-white/80" : "text-white/90"}`}
           >
             Contact
           </Link>

@@ -4,7 +4,8 @@ import Image from "next/image";
 export function Now() {
   return (
     <section
-      className="bg-[var(--cb-bg-1)] overflow-hidden px-4 py-8 md:py-10"
+      id="now"
+      className="scroll-mt-24 bg-[var(--cb-bg-1)] overflow-hidden px-4 py-8 md:py-10"
       aria-labelledby="now-heading"
     >
       <div
