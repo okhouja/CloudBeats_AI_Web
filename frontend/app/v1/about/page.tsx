@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Behind the Beats (v1) | CloudBeats AI",
   description:
     "The story behind CloudBeats AI — where cloud systems, sound design, and AI experimentation converge.",
+  robots: { index: false, follow: false },
   openGraph: {
     title: "Behind the Beats (v1) | CloudBeats AI",
     description:

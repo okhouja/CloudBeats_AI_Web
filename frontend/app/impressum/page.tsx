@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Impressum | CloudBeats AI",
   description: "Legal information for CloudBeats AI.",
+  robots: { index: false, follow: false },
 };
 
 export default function ImpressumPage() {

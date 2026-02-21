@@ -3,6 +3,7 @@ import { ImpressumContent } from "@/components/ImpressumContent";
 export const metadata = {
   title: "Impressum (v1) | CloudBeats AI",
   description: "Legal information for CloudBeats AI.",
+  robots: { index: false, follow: false },
 };
 
 export default function V1ImpressumPage() {
