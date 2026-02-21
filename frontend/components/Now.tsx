@@ -1,3 +1,4 @@
+// frontend\components\Now.tsx
 import Image from "next/image";
 
 export function Now() {
@@ -27,7 +28,7 @@ export function Now() {
               id="now-label"
               className="text-xs font-medium uppercase tracking-widest text-[var(--cb-text-muted)]"
             >
-              Now
+            Latest Release
             </p>
             <h2
               id="now-heading"
@@ -36,7 +37,7 @@ export function Now() {
               Chapter IV — Motion
             </h2>
             <p className="text-[var(--cb-text-muted)] text-[15px] md:text-base">
-              Vornel Remixes · Releasing soon.
+            Vornel Remixes · Just Released.
             </p>
             <a
               href="https://www.youtube.com/@CloudBeatsAI"
