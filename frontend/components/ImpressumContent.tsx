@@ -7,8 +7,8 @@ export function ImpressumContent({
   titleClassName = "text-3xl font-semibold text-white md:text-4xl",
   bodyClassName = "mt-10 space-y-8 text-white/85 leading-relaxed",
   labelClassName = "text-sm uppercase tracking-wider text-white/60",
-  linkClassName = "text-sky-300 underline underline-offset-4 hover:text-sky-200",
-  buttonClassName = "mt-6 inline-block rounded-xl bg-fuchsia-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-fuchsia-500",
+  linkClassName = "text-sky-300 underline underline-offset-4 hover:text-sky-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded",
+  buttonClassName = "mt-6 inline-block rounded-xl bg-fuchsia-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-fuchsia-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded",
 }: {
   wrapperClassName?: string;
   titleClassName?: string;

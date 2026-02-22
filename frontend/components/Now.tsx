@@ -44,7 +44,7 @@ export function Now() {
               href="https://www.youtube.com/@CloudBeatsAI"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-1 inline-block rounded-lg bg-[var(--cb-pink-strong)] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:opacity-90"
+              className="mt-1 inline-block rounded-lg bg-[var(--cb-pink-strong)] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cb-bg-1)]"
             >
               Watch on YouTube
             </a>

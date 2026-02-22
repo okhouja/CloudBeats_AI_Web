@@ -17,14 +17,14 @@ export default function Footer() {
         <nav aria-label="Legal and contact">
           <a
             href={`${basePath}/impressum`}
-            className="underline transition-colors hover:text-[var(--cb-text)]"
+            className="underline transition-colors hover:text-[var(--cb-text)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cb-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cb-bg-1)] rounded"
           >
             Impressum
           </a>
           <span className="mx-3">·</span>
           <a
             href="mailto:info@cloudbeats.ai"
-            className="underline transition-colors hover:text-[var(--cb-text)]"
+            className="underline transition-colors hover:text-[var(--cb-text)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cb-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cb-bg-1)] rounded"
           >
             info@cloudbeats.ai
           </a>

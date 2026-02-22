@@ -22,7 +22,7 @@ export function About() {
         <div className="mt-6 flex justify-center">
           <Link
             href="/about"
-            className="inline-block rounded-lg border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-medium text-[var(--cb-text)] transition-all hover:border-white/20 hover:shadow-[0_0_24px_rgba(133,215,246,0.15)]"
+            className="inline-block rounded-lg border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-medium text-[var(--cb-text)] transition-all hover:border-white/20 hover:shadow-[0_0_24px_rgba(133,215,246,0.15)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cb-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cb-bg-1)]"
           >
             Behind the Beats →
           </Link>

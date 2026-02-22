@@ -42,8 +42,8 @@ export default function ImpressumPage() {
             titleClassName="text-3xl font-semibold text-[var(--cb-text)] md:text-4xl"
             bodyClassName="mt-10 space-y-8 text-[var(--cb-text-muted)] leading-relaxed"
             labelClassName="text-sm uppercase tracking-wider text-[var(--cb-text-muted)]/80"
-            linkClassName="text-[var(--cb-cyan)] underline underline-offset-4 hover:opacity-90"
-            buttonClassName="mt-6 inline-block rounded-xl bg-[var(--cb-pink-strong)] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+            linkClassName="text-[var(--cb-cyan)] underline underline-offset-4 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cb-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cb-bg-1)] rounded"
+            buttonClassName="mt-6 inline-block rounded-xl bg-[var(--cb-pink-strong)] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cb-bg-1)] rounded"
           />
         </div>
       </main>

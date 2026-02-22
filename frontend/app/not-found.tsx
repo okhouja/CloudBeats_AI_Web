@@ -15,13 +15,13 @@ export default function NotFound() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/"
-              className="inline-block rounded-xl border border-white/10 bg-[var(--cb-pink-strong)] px-6 py-3 text-sm font-medium text-white transition-colors hover:opacity-90"
+              className="inline-block rounded-xl border border-white/10 bg-[var(--cb-pink-strong)] px-6 py-3 text-sm font-medium text-white transition-colors hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cb-bg-1)]"
             >
               Go Home
             </Link>
             <Link
               href="/about"
-              className="inline-block rounded-xl border border-white/10 bg-[rgba(255,255,255,0.04)] px-6 py-3 text-sm font-medium text-[var(--cb-text)] transition-colors hover:bg-white/10"
+              className="inline-block rounded-xl border border-white/10 bg-[rgba(255,255,255,0.04)] px-6 py-3 text-sm font-medium text-[var(--cb-text)] transition-colors hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cb-bg-1)]"
             >
               Behind the Beats
             </Link>

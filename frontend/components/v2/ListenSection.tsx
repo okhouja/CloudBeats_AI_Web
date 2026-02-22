@@ -26,9 +26,10 @@ export function ListenSection() {
             href={YOUTUBE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center gap-3 rounded-xl border border-white/10 bg-[rgba(255,255,255,0.04)] px-6 py-5 text-[var(--cb-text)] transition-colors hover:border-[var(--cb-cyan)]/40 hover:bg-white/10"
+            aria-label="Open CloudBeats AI YouTube channel"
+            className="flex flex-col items-center gap-3 rounded-xl border border-white/10 bg-[rgba(255,255,255,0.04)] px-6 py-5 text-[var(--cb-text)] transition-colors hover:border-[var(--cb-cyan)]/40 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cb-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cb-bg-1)]"
           >
-            <Youtube className="h-8 w-8 shrink-0" strokeWidth={1.5} />
+            <Youtube className="h-8 w-8 shrink-0" strokeWidth={1.5} aria-hidden />
             <span className="text-center font-medium">YouTube</span>
             <span className="text-center text-xs text-[var(--cb-text-muted)]">
               Channel
@@ -38,9 +39,10 @@ export function ListenSection() {
             href={SPOTIFY_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex flex-col items-center gap-3 rounded-xl border border-white/10 bg-[rgba(255,255,255,0.04)] px-6 py-5 text-[var(--cb-text)] transition-colors hover:border-[var(--cb-cyan)]/40 hover:bg-white/10"
+            aria-label="Open CloudBeats AI Spotify artist profile"
+            className="flex flex-col items-center gap-3 rounded-xl border border-white/10 bg-[rgba(255,255,255,0.04)] px-6 py-5 text-[var(--cb-text)] transition-colors hover:border-[var(--cb-cyan)]/40 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cb-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cb-bg-1)]"
           >
-            <Music2 className="h-8 w-8 shrink-0" strokeWidth={1.5} />
+            <Music2 className="h-8 w-8 shrink-0" strokeWidth={1.5} aria-hidden />
             <span className="text-center font-medium">Spotify</span>
             <span className="text-center text-xs text-[var(--cb-text-muted)]">
               Artist profile
@@ -48,7 +50,8 @@ export function ListenSection() {
           </a>
           <a
             href="#now"
-            className="flex flex-col items-center gap-3 rounded-xl border border-white/10 bg-[rgba(255,255,255,0.04)] px-6 py-5 text-[var(--cb-text)] transition-colors hover:border-[var(--cb-pink)]/40 hover:bg-white/10"
+            aria-label="Go to latest release section"
+            className="flex flex-col items-center gap-3 rounded-xl border border-white/10 bg-[rgba(255,255,255,0.04)] px-6 py-5 text-[var(--cb-text)] transition-colors hover:border-[var(--cb-pink)]/40 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--cb-cyan)] focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--cb-bg-1)]"
           >
             <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--cb-pink-strong)]/20 text-sm font-semibold text-[var(--cb-pink-strong)]">
               •
