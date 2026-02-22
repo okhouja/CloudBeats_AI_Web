@@ -1,3 +1,5 @@
+import { v2 } from "./ui";
+
 /**
  * System Roadmap section for /v2. Ported from Figma_Prototype_v2 home layout.
  * Uses frontend Tailwind + CSS variables only; no imports from prototype.
@@ -35,10 +37,10 @@ export function SystemRoadmap() {
 
   return (
     <section
-      className="bg-[var(--cb-bg-1)] overflow-hidden px-4 py-12 md:py-16"
+      className={v2.sectionWrapper}
       aria-labelledby="roadmap-heading"
     >
-      <div className="mx-auto min-w-0 max-w-[1400px] border-t border-white/10 pt-12">
+      <div className={`${v2.sectionInner} max-w-[1400px] border-t border-white/10 pt-12`}>
         <div className="flex min-w-0 flex-col gap-4 sm:flex-row sm:justify-between sm:items-end mb-12">
           <h2
             id="roadmap-heading"

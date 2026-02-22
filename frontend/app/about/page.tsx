@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import { AboutPageContent } from "@/components/v2/AboutPageContent";
+import { v2 } from "@/components/v2/ui";
 
 export const metadata: Metadata = {
   title: "Behind the Beats | CloudBeats AI",
@@ -36,11 +37,11 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-[var(--cb-bg-1)]">
       <main className="overflow-hidden px-4 py-12 md:py-16">
-        <div className="mx-auto min-w-0 max-w-5xl">
-          <h1 className="mb-2 text-center text-sm font-medium uppercase tracking-[0.35em] text-[var(--cb-text-muted)]">
+        <div className={`${v2.sectionInner} max-w-5xl`}>
+          <h1 className={`mb-2 text-center ${v2.headingSmall}`}>
             About
           </h1>
-          <p className="mb-10 text-center text-[var(--cb-text-muted)] md:mb-12">
+          <p className={`mb-10 text-center md:mb-12 ${v2.textMuted}`}>
             The narrative behind the project
           </p>
           <AboutPageContent backHref="/" />

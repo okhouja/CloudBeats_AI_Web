@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { v2 } from "./ui";
 
 const GITHUB_URL = "https://github.com/okhouja";
 const LINKEDIN_URL = "https://www.linkedin.com/in/omar-khouja/";
@@ -14,7 +15,7 @@ interface AboutPageContentProps {
  */
 export function AboutPageContent({ backHref = "/v2" }: AboutPageContentProps) {
   return (
-    <div className="mx-auto min-w-0 max-w-5xl rounded-2xl border border-white/10 bg-[rgba(255,255,255,0.04)] p-6 shadow-[0_0_40px_rgba(0,0,0,0.2)] backdrop-blur-sm md:p-10">
+    <div className={`mx-auto min-w-0 max-w-5xl ${v2.cardLarge} p-6 md:p-10`}>
       <div className="flex flex-col gap-10 md:flex-row md:items-start md:gap-12">
         <div className="shrink-0 md:sticky md:top-24 md:w-[420px]">
           <div className="aspect-video w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_0_40px_rgba(133,215,246,0.08),0_0_20px_rgba(218,67,196,0.06)]">
@@ -29,10 +30,10 @@ export function AboutPageContent({ backHref = "/v2" }: AboutPageContentProps) {
         </div>
 
         <div className="min-w-0 flex-1">
-          <h2 className="text-2xl font-semibold text-[var(--cb-text)] md:text-3xl">
+          <h2 className={v2.headingPage}>
             Behind the Beats
           </h2>
-          <p className="mt-2 text-[var(--cb-text-muted)]">
+          <p className={`mt-2 ${v2.textMuted}`}>
             The story behind CloudBeats AI
           </p>
 
