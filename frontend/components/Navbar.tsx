@@ -9,8 +9,9 @@ export function Navbar() {
   const isV1 = pathname.startsWith("/v1");
   const isV2 = pathname.startsWith("/v2");
   const basePath = isV1 ? "/v1" : isV2 ? "/v2" : "";
-  const hasListenContact = pathname === "/" || pathname === "/v2" || pathname === "/v1";
+  const hasContactOnPage = pathname === "/" || pathname === "/v2" || pathname === "/v1";
   const isAboutPage = pathname === "/about" || pathname === "/v2/about" || pathname === "/v1/about";
+  const isReleasesPage = pathname === "/music" || pathname.startsWith("/music/");
 
   return (
     <header className="fixed left-0 right-0 top-0 z-50 w-full max-w-full overflow-hidden border-b border-white/10 bg-white/5 backdrop-blur-md">
@@ -46,13 +47,13 @@ export function Navbar() {
             <span className="sm:hidden">Beats</span>
           </Link>
           <Link
-            href={hasListenContact ? "#listen" : (basePath ? `${basePath}/` : "/") + "#listen"}
-            className={`text-sm font-medium transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded ${isAboutPage ? "text-white/80" : "text-white/90"}`}
+            href={basePath ? `${basePath}/music` : "/music"}
+            className={`text-sm font-medium transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded ${isReleasesPage ? "text-white" : "text-white/80"}`}
           >
-            Listen
+            Releases
           </Link>
           <Link
-            href={hasListenContact ? "#contact" : (basePath ? `${basePath}/` : "/") + "#contact"}
+            href={hasContactOnPage ? "#contact" : (basePath ? `${basePath}/` : "/") + "#contact"}
             className={`hidden text-sm font-medium transition-colors hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent rounded sm:inline-block ${isAboutPage ? "text-white/80" : "text-white/90"}`}
           >
             Contact
